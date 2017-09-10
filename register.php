@@ -4,25 +4,29 @@
 	$error="";
 	$count=0;
 	$result="";
+	$success = false;
 	if($_POST){
 		
 		$myusername = mysqli_real_escape_string($db,$_POST['username']);
 		$mypassword = mysqli_real_escape_string($db,$_POST['password']);
-		$sql = "SELECT user_id FROM login WHERE user_name = '$myusername' and user_password = '$mypassword'";
+		$fullname = mysqli_real_escape_string($db,$_POST['user_full_name']);
+		
+		$sql = "SELECT user_id FROM login WHERE user_name = '$myusername'";
 		
 		if($result = mysqli_query($db,$sql)){
 			$count = mysqli_num_rows($result);
+			if($count == 1){
+			$error = 'username already exists. Please Select another :(';
+			}else{
+				$sql = "INSERT INTO `login` (`user_id`, `user_full_name`, `user_name`, `user_password`) VALUES (NULL, '$fullname', '$myusername', '$mypassword')";
+				$result = mysqli_query($db,$sql);
+			
+			if($result != NULL){
+				$success = true;
+			}
 		}
-		
-		if($count == 1) {
-			$_SESSION['current_username']=$myusername;
-			$sql = "SELECT user_full_name FROM login WHERE user_name = '$myusername'";
-			$result = mysqli_query($db,$sql);
-			$row = mysqli_fetch_assoc($result);
-			$_SESSION['current_name'] = $row['user_full_name'];
-			header("Location: Welcome.php");
-		}else {
-         $error = "Your UserName or Password is invalid";
+		}else{
+			$error = 'invalid entry/database corrupt, just like Modi sarkar :O :(';
 		}
 	}
 ?>
@@ -30,7 +34,7 @@
 
 <html lang="en">
 <head>
-  <title>Fantasy League - Login</title>
+  <title>Fantasy League - Register</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -40,12 +44,19 @@
 <body>
 
 <div class="container">
-  <h2 align="center">Login To Fantasy</h2>
+  <h2 align="center">Register For Fantasy</h2>
   <form class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method = "POST">
     <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Full Name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="user_full_name" placeholder="Enter Full Name" name="user_full_name">
+      </div>
+    </div>
+	
+	<div class="form-group">
       <label class="control-label col-sm-2" for="email">UserName:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="email" placeholder="Enter username" name="username">
+        <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
       </div>
     </div>
     <div class="form-group">
@@ -56,16 +67,15 @@
     </div>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <div class="checkbox">
-          <label><input type="checkbox" name="remember"> Remember me</label>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" name="submit" value="submit" class="btn btn-default">Submit</button>
       </div>
-	  <p><?php echo "$error";?></p>
+	  <?php if(!$success){
+		  ?><p><?php echo "$error";?></p>
+	  <?php
+	  }else{
+		  ?><p>SUCESS! Click <a href=login.php>HERE</a> to login</p><?php
+	  }
+	  ?>
     </div>
   </form>
 </div>
