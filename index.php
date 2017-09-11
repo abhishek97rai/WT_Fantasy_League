@@ -12,22 +12,33 @@ include("css_scripts/index.css");
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery.min.js"></script>
+	<script>
+		$.get("navbar.php", function(data){
+		$("#nav-placeholder").replaceWith(data);
+		});
+	</script>
 </head>
-<body>
+<body style = "border: 0; padding: 0; margin: 0;">
 
 <div class="container-fluid bg-info">
-	<div class = "row">
+	<div class = "row blackbg">
 		<div class="col-md-3">
 		</div>
 		
 		<div class="col-md-6">
-		<h1 class = "hidden-xs bg-primary" align="center">Welcome to Fantasy League!!</h1>
+		<div align="center">
+		<img class="img-responsive" src="text-effects/Welcome-logo.gif">
+		<img class="img-responsive" src="text-effects/Welcome-quote.gif">
+		</div>
 		</div>
 		<div class="col-md-3">
 		</div>
-	</div>	
-		<h3 class="heading">You score when they perform!</h3>
-	<br><br>	
+	</div>
+	
+	<div id="nav-placeholder" style="display: inline-block; background-color:#000000;">
+	</div>
+	<br><br>
 	
 	<div class = "row">
 		<div class="col-md-2">
