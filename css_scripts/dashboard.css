@@ -1,0 +1,13 @@
+.header{
+	text-align: center;
+}
+
+body{
+	background-image: url('backgrounds/main.jpg');
+	background-size: cover;
+	color: #ffffff;
+}
+
+h1{
+	color: #ffffff;
+}

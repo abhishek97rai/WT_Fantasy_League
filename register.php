@@ -10,6 +10,7 @@
 		$myusername = mysqli_real_escape_string($db,$_POST['username']);
 		$mypassword = mysqli_real_escape_string($db,$_POST['password']);
 		$fullname = mysqli_real_escape_string($db,$_POST['user_full_name']);
+		//$mypassword = password_hash($mypassword,PASSWORD_BCRYPT);
 		
 		$sql = "SELECT user_id FROM login WHERE user_name = '$myusername'";
 		

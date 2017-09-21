@@ -9,7 +9,26 @@
 </head>
 <body>
 
-<h1 class="text-muted text-success">What color background is this?? :(((</h1>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-5">
+			<div class="row">
+				<div class="col-md-5">
+					<p class = "bg-info">This will appear on the left side</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<p class = "bg-danger">This will appear on the right side</p>
+		</div>
+		<div class="col-md-3">
+			<p class = "bg-success">This will appear on the right side</p>
+		</div>
+		<div class="col-md-1">
+			<p>This will appear on the right side</p>
+		</div>
+	</div>
+</div>	
 
 </body>
 </html>

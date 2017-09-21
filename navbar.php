@@ -16,11 +16,11 @@
 		  <a class="navbar-brand" href="#">Fantasy League</a>
 		</div>
 		<ul class="nav navbar-nav">
-		  <li class="active"><a href="#">Home</a></li>
-		  <li><a href="#">Dashboard</a></li>
-		  <li><a href="#">My Team</a></li>
-		  <li><a href="#">Scores</a></li>
-		  <li><a href="#">Point Details</a></li>
+		  <li <?php if($_SERVER['PHP_SELF'] == '/Fantasy/navbar.php') echo 'class="active"'?>><a href="index.php">Home</a></li>
+		  <li <?php if($_SERVER['PHP_SELF'] == '/Fantasy/dashboard.php') echo 'class="active"'?>><a href="dashboard.php">Dashboard</a></li>
+		  <li <?php if($_SERVER['PHP_SELF'] == '/Fantasy/my_team.php') echo 'class="active"'?>><a href="my_team.php">My Team</a></li>
+		  <li <?php if($_SERVER['PHP_SELF'] == '/Fantasy/scores.php') echo 'class="active"'?>><a href="scores.php">Scores</a></li>
+		  <li <?php if($_SERVER['PHP_SELF'] == '/Fantasy/points.php') echo 'class="active"'?>><a href="points.php">Point Details</a></li>
 		</ul>
 		
 		<ul class="nav navbar-nav navbar-right">

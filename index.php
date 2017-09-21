@@ -1,6 +1,6 @@
 <style>
 <?php
-include("css_scripts/index.css");
+//include("css_scripts/index.css");
 ?>
 </style>
 
@@ -10,6 +10,7 @@ include("css_scripts/index.css");
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel = "stylesheet" type = "text/css" href = "css_scripts/index.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script src="//code.jquery.com/jquery.min.js"></script>
@@ -20,8 +21,8 @@ include("css_scripts/index.css");
 	</script>
 </head>
 <body style = "border: 0; padding: 0; margin: 0;">
-
-<div class="container-fluid bg-info">
+<div class = "bg-info">
+<div class="container-fluid">
 	<div class = "row blackbg">
 		<div class="col-md-3">
 		</div>
@@ -35,11 +36,12 @@ include("css_scripts/index.css");
 		<div class="col-md-3">
 		</div>
 	</div>
+</div>	
 	
-	<div id="nav-placeholder" style="display: inline-block; background-color:#000000;">
+	<div id="nav-placeholder">
 	</div>
+<div class="container-fluid">	
 	<br><br>
-	
 	<div class = "row">
 		<div class="col-md-2">
 		</div>
@@ -83,7 +85,7 @@ include("css_scripts/index.css");
 		</div>
 	</div>
 </div>
-
+</div>
 </body>
 </html>
 

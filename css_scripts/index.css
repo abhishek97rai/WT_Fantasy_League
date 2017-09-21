@@ -6,15 +6,17 @@
 .left-side-pane{
 	text-align : center;
 	color : #FFFFFF;
-	background-image: url("backgrounds/wilshere.gif");
+	background-image: url("/backgrounds/wilshere.gif");
     background-repeat: repeat-x;
+	z-index : 1;
 }
 
 .right-side-pane{
 	text-align : left;
 	color : #FFFFFF;
-	background-image: url("backgrounds/toplay.gif");
+	background-image: url("/backgrounds/toplay.gif");
     background-repeat: repeat-x;
+	z-index : 1;
 }
 
 .button-text{
