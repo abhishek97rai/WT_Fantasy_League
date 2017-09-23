@@ -30,6 +30,8 @@
 			$error = 'invalid entry/database corrupt, just like Modi sarkar :O :(';
 		}
 	}
+	
+	include ("navbar.php");
 ?>
 
 

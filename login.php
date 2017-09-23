@@ -33,6 +33,8 @@
 	}else{
 		header("Location: index.php");
 	}
+	
+	include ("navbar.php");
 ?>
 
 

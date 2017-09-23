@@ -1,12 +1,17 @@
 <?php
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 	include("config.php");
 	
 	if(isset($_POST['pid'])){
+		$user_id = $_SESSION['user_id'];
 		$player_id = $_POST['pid'];
 		$operation = $_POST['operation'];
 		$position = $_POST['position'];
 		
-		$name = select_and_operate('2015130056',$player_id,$operation,$position);
+		$name = select_and_operate($user_id,$player_id,$operation,$position);
 		
 		if($operation == 0)
 			$info = 'added';
