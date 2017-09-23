@@ -1,5 +1,9 @@
 <?php
-include("config.php");
+
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 /*$players = array(
 			array("id"=>"1001", "name"=>"Manuel Neuer", "value"=>31),
 			array("id"=>"1002", "name"=>"Petr Cech", "value"=>21),
@@ -7,13 +11,19 @@ include("config.php");
 			array("id"=>"1004", "name"=>"Kolo Toure", "value"=>18)
 			);
 */
-$user_id = '2015130061';	
+
+//must include config before this
+$user_id = $_SESSION['user_id'];	
 $net_team_value = 0;
 
 $defenders = array();
-$goalies = array();
+$goalie = array();
 $mids = array();
 $forwards = array();
+$pool_goalie = array();
+$pool_defenders = array();
+$pool_mids = array();
+$pool_forwards = array();
 
 //for goalies in user's team
 $result = mysqli_query($db,"SELECT goal.player_id, goal.player_name, goal.player_value FROM football_goalies as goal where goal.player_id IN (SELECT player_id from team_goalies.goalies_".$user_id.")");
@@ -83,5 +93,5 @@ while($line = mysqli_fetch_assoc($result)){
 	//echo($line['player_name']);
 }
 
-$rem_budget = 250 - $net_team_value;		
+$rem_budget = 225 - $net_team_value;		
 	?>

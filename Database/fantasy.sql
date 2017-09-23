@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2017 at 09:31 PM
+-- Generation Time: Sep 23, 2017 at 09:20 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -192,10 +192,7 @@ CREATE TABLE `login` (
 INSERT INTO `login` (`user_id`, `user_full_name`, `user_name`, `user_password`) VALUES
 (2015130056, 'Aqueel Kadri', 'gunnerKadri', 'gooner'),
 (2015130061, 'Manas Shukla', 'manas97', 'gooner'),
-(2015130062, 'Arijit Ghosh', 'ariana', 'gooner'),
-(2015130063, 'Dhruv Trivedi', 'sexyShlok', 'gooner'),
-(2015130064, 'Tejaas Solanki', 'tejaas', 'gooner'),
-(2015130065, 'Shubham CR', 'thaCR', '$2y$10$q.RGW32R');
+(2015130066, 'Ninja', 'Hatori', 'gooner');
 
 --
 -- Indexes for dumped tables
@@ -244,7 +241,7 @@ ALTER TABLE `football_defenders`
 -- AUTO_INCREMENT for table `football_forwards`
 --
 ALTER TABLE `football_forwards`
-  MODIFY `player_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4032;
+  MODIFY `player_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4031;
 --
 -- AUTO_INCREMENT for table `football_goalies`
 --
@@ -259,7 +256,7 @@ ALTER TABLE `football_mids`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2015130066;COMMIT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2015130067;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

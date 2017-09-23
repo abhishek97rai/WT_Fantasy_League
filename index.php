@@ -1,6 +1,7 @@
 <style>
 <?php
 //include("css_scripts/index.css");
+session_start();
 ?>
 </style>
 
