@@ -4,8 +4,10 @@ if(!isset($_SESSION))
     { 
         session_start(); 
     }
-	if(!isset($_SESSION['user_id']))	
-		header("Location: login.php");	
+	if(!isset($_SESSION['user_id'])){	
+		header("Location: login.php");
+		die();
+	}
 include("config.php");
 
 $user_id = $_SESSION['user_id'];
@@ -29,12 +31,37 @@ function create_table($type,$user_id){
 	}
 }
 
-function doThis(){
-	echo "This is DONE!!";
+$result = mysqli_query($db,"SELECT team_name,team_eligibility FROM team_details where team_details.user_id = ".$user_id);
+$line = mysqli_fetch_assoc($result);
+$team_name = $line['team_name'];
+$team_eligibility = $line['team_eligibility'];
+
+function checkEligible($type,$max){
+	global $user_id,$db;
+	$query = "SELECT COUNT(player_id) as Num FROM team_".$type."s.".$type."s_".$user_id."";
+	$result = mysqli_query($db, $query);
+	$line_2 = mysqli_fetch_assoc($result);
+	if($line_2['Num'] == $max)
+		return true;
+	else
+		return false;
 }
 
 include("players_data.php");
 
+$result = mysqli_query($db,"UPDATE `team_details` SET `team_value` =".$net_team_value." WHERE `team_details`.`user_id` = ".$user_id);
+$eG = checkEligible('goalie',1);
+$eD = checkEligible('defender',4);
+$eM = checkEligible('mid',3);
+$eF = checkEligible('forward',3);
+
+if($eG && $eD && $eM && $eF && $net_team_value < 226){
+	$team_eligibility = 1;
+}else{
+	$team_eligibility = 0;
+}
+
+$result = mysqli_query($db,"UPDATE `team_details` SET `team_eligibility` =".$team_eligibility." WHERE `team_details`.`user_id` = ".$user_id);
 ?>
 
 <script>
@@ -87,11 +114,50 @@ include("players_data.php");
 
 </script>
 
+<style>
+
+table {
+        width: 100%;
+    }
+
+thead, tbody, tr, td, th { display: block; }
+
+tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+thead th {
+    height: 30px;
+
+    /*text-align: left;*/
+}
+
+tbody {
+    max-height: 590px;
+    overflow-y: auto;
+}
+
+thead {
+    /* fallback */
+}
+
+
+tbody td, thead th {
+    width: 50%;
+    float: left;
+}
+
+</style>
+
 <head>
-    <title>My Team</title>
+    <title><?php echo($team_name); ?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel = "stylesheet" type = "text/css" href = "css_scripts/dashboard.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script src="js_scripts/transfers.js"></script>
@@ -100,7 +166,7 @@ include("players_data.php");
 <body>
 <div class="container-fluid">
 		<div class="header">
-			<h1 style="text-align: center;">My Team</h1>
+			<h1 style="text-align: center;"><?php echo($team_name); ?></h1>
 		</div>
 	</div>
 	
@@ -110,6 +176,14 @@ include("players_data.php");
 	
 	<div style="margin-left: 20px; margin-right: 20px; ">
 		<h3 style="text-align:left;">Total Budget: $225m<span style="float:right;">Budget Remaining: $<?php echo($rem_budget); ?>m</span></h3>
+		<h3>
+		<div class = <?php if($team_eligibility == 1){ echo "bg-success"; ?> style = "display: inline-block;">
+		<?php echo"VALID TEAM!";} ?>
+		</div>
+		<div class = <?php if($team_eligibility == 0){ echo "bg-danger"; ?> style = "display: inline-block;">
+		<?php echo"INVALID TEAM!";} ?>
+		</div>
+		</h3>
 	</div>
 	<div class="row" style="margin-left: 20px; margin-right: 20px; ">
 		<div class="col-md-6">
@@ -133,7 +207,7 @@ include("players_data.php");
 				</tbody>
 			</table>
 			<h3>Defenders</h3>
-			<table class="table table-condensed">
+			<table class="table table-fixed table-condensed">
 				<thead>
 					<tr>
 						<th>Player</th>
@@ -150,7 +224,7 @@ include("players_data.php");
 				</tbody>
 			</table>
 			<h3>Midfielders</h3>
-			<table class="table table-condensed">
+			<table class="table table-fixed table-condensed">
 				<thead>
 					<tr>
 						<th>Player</th>
@@ -187,6 +261,14 @@ include("players_data.php");
 		<div class="col-md-6">
 			<h2 style="text-align:center;">Player Pool</h2>
 			<br>
+			<ul class="nav nav-tabs">
+				<li><a data-toggle="tab" href="#goalkeepers">Goalkeepers</a></li>
+				<li><a data-toggle="tab" href="#defenders">Defenders</a></li>
+				<li><a data-toggle="tab" href="#midfielders">Midfielders</a></li>
+				<li><a data-toggle="tab" href="#forwards">Forwards</a></li>
+			</ul>
+		<div class="tab-content">
+			<div id="goalkeepers" class="tab-pane fade in active">
 			<h3>Goalkeepers</h3>
 			<table class="table table-condensed">
 				<thead>
@@ -204,8 +286,10 @@ include("players_data.php");
 				<?php } ?>
 				</tbody>
 			</table>
+			</div>
+			<div id="defenders" class="tab-pane fade">
 			<h3>Defenders</h3>
-			<table class="table table-condensed">
+			<table class="table table-fixed table-condensed">
 				<thead>
 					<tr>
 						<th>Player</th>
@@ -221,8 +305,10 @@ include("players_data.php");
 				<?php } ?>
 				</tbody>
 			</table>
+			</div>
+			<div id="midfielders" class="tab-pane fade">
 			<h3>Midfielders</h3>
-			<table class="table table-condensed">
+			<table class="table table-fixed table-condensed">
 				<thead>
 					<tr>
 						<th>Player</th>
@@ -238,8 +324,10 @@ include("players_data.php");
 				<?php } ?>
 				</tbody>
 			</table>
+			</div>
+			<div id="forwards" class="tab-pane fade">
 			<h3>Forwards</h3>
-			<table class="table table-condensed">
+			<table class="table table-fixed table-condensed">
 				<thead>
 					<tr>
 						<th>Player</th>
@@ -255,5 +343,7 @@ include("players_data.php");
 				<?php } ?>
 				</tbody>
 			</table>
+			</div>
+		</div>	
 		</div>
 </body>

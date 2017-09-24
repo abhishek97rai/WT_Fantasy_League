@@ -22,7 +22,7 @@ session_start();
 	</script>
 </head>
 <body style = "border: 0; padding: 0; margin: 0;">
-<div class = "bg-info">
+<div>
 <div class="container-fluid">
 	<div class = "row blackbg">
 		<div class="col-md-3">

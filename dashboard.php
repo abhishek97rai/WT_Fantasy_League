@@ -22,29 +22,6 @@
 	</div>
 	
 	<?php
-	/*
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a href="#" class="navbar-brand">Fantasy League</a>
-			</div>
-			<div>
-				<ul class="nav navbar-nav">
-					<li><a href="index.php">Home</a></li>
-					<li class="active"><a href="#">Dashboard</a></li>
-					<li><a href="my_team.php">My Team</a></li>
-					<li><a href="#">Scores</a></li>
-					<li><a href="#">Point Details</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Logout</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	*/
-	?>
-	<?php
 	include ("navbar.php");
 	?>
 	

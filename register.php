@@ -10,6 +10,7 @@
 		$myusername = mysqli_real_escape_string($db,$_POST['username']);
 		$mypassword = mysqli_real_escape_string($db,$_POST['password']);
 		$fullname = mysqli_real_escape_string($db,$_POST['user_full_name']);
+		$team_name = mysqli_real_escape_string($db,$_POST['team']);
 		//$mypassword = password_hash($mypassword,PASSWORD_BCRYPT);
 		
 		$sql = "SELECT user_id FROM login WHERE user_name = '$myusername'";
@@ -21,6 +22,14 @@
 			}else{
 				$sql = "INSERT INTO `login` (`user_id`, `user_full_name`, `user_name`, `user_password`) VALUES (NULL, '$fullname', '$myusername', '$mypassword')";
 				$result = mysqli_query($db,$sql);
+				
+				$sql = "SELECT user_id FROM login WHERE user_name = '$myusername'";
+				$result_alt = mysqli_query($db,$sql);
+				$arr = mysqli_fetch_assoc($result_alt);
+				$id = $arr['user_id'];
+				
+				$sql = "INSERT INTO `team_details` (`team_id`, `user_id`, `team_name`) VALUES (NULL, '$id', '$team_name')";
+				$result_alt = mysqli_query($db,$sql);
 			
 			if($result != NULL){
 				$success = true;
@@ -41,12 +50,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel = "stylesheet" type = "text/css" href = "css_scripts/dashboard.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<div class="container">
+<div class="container-fluid" style = "margin-left: 20px; margin-right: 20px; background-color: #000000;">
   <h2 align="center">Register For Fantasy</h2>
   <form class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method = "POST">
     <div class="form-group">
@@ -60,6 +70,12 @@
       <label class="control-label col-sm-2" for="email">UserName:</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="email">Team Name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="username" placeholder="Enter Team Name" name="team">
       </div>
     </div>
     <div class="form-group">

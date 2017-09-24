@@ -3,11 +3,19 @@
 }
 
 body{
-	background-image: url('backgrounds/main.jpg');
+	background-image: url('backgrounds/white.jpg');
 	background-size: cover;
 	color: #ffffff;
 }
 
 h1{
 	color: #ffffff;
+}
+
+.table.table-condensed tr th {
+   border-bottom: 2px ridge #f00; /* Change the color you want to set */
+}
+
+.table.table-condensed tr td {
+   border-bottom: 1px ridge #f00; /* Change the color you want to set */
 }

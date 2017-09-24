@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2017 at 09:20 PM
+-- Generation Time: Sep 24, 2017 at 02:35 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -190,9 +190,29 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`user_id`, `user_full_name`, `user_name`, `user_password`) VALUES
-(2015130056, 'Aqueel Kadri', 'gunnerKadri', 'gooner'),
-(2015130061, 'Manas Shukla', 'manas97', 'gooner'),
-(2015130066, 'Ninja', 'Hatori', 'gooner');
+(1, 'Manas Shukla', 'manas97', 'gooner');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `team_details`
+--
+
+CREATE TABLE `team_details` (
+  `team_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `team_name` text NOT NULL,
+  `team_value` int(11) NOT NULL DEFAULT '0',
+  `team_points` int(11) NOT NULL DEFAULT '0',
+  `team_eligibility` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `team_details`
+--
+
+INSERT INTO `team_details` (`team_id`, `user_id`, `team_name`, `team_value`, `team_points`, `team_eligibility`) VALUES
+(1, 1, 'Gunners Forever', 224, 0, 1);
 
 --
 -- Indexes for dumped tables
@@ -229,6 +249,12 @@ ALTER TABLE `login`
   ADD UNIQUE KEY `login_index` (`user_id`);
 
 --
+-- Indexes for table `team_details`
+--
+ALTER TABLE `team_details`
+  ADD PRIMARY KEY (`team_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -256,7 +282,12 @@ ALTER TABLE `football_mids`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2015130067;COMMIT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `team_details`
+--
+ALTER TABLE `team_details`
+  MODIFY `team_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

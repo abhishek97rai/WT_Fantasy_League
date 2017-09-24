@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2017 at 09:21 PM
+-- Generation Time: Sep 24, 2017 at 02:37 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -25,74 +25,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mids_2015130056`
+-- Table structure for table `mids_1`
 --
 
-CREATE TABLE `mids_2015130056` (
+CREATE TABLE `mids_1` (
   `mid_id` int(3) NOT NULL,
   `player_id` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mids_2015130056`
+-- Dumping data for table `mids_1`
 --
 
-INSERT INTO `mids_2015130056` (`mid_id`, `player_id`) VALUES
-(1, 3002),
-(2, 3022),
-(3, 3014);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `mids_2015130061`
---
-
-CREATE TABLE `mids_2015130061` (
-  `mid_id` int(11) NOT NULL,
-  `player_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `mids_2015130061`
---
-
-INSERT INTO `mids_2015130061` (`mid_id`, `player_id`) VALUES
+INSERT INTO `mids_1` (`mid_id`, `player_id`) VALUES
 (1, 3001),
-(2, 3022),
-(3, 3023);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `mids_2015130066`
---
-
-CREATE TABLE `mids_2015130066` (
-  `mid_id` int(3) NOT NULL,
-  `player_id` int(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(2, 3011),
+(3, 3022);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `mids_2015130056`
+-- Indexes for table `mids_1`
 --
-ALTER TABLE `mids_2015130056`
-  ADD PRIMARY KEY (`mid_id`);
-
---
--- Indexes for table `mids_2015130061`
---
-ALTER TABLE `mids_2015130061`
-  ADD PRIMARY KEY (`mid_id`);
-
---
--- Indexes for table `mids_2015130066`
---
-ALTER TABLE `mids_2015130066`
+ALTER TABLE `mids_1`
   ADD PRIMARY KEY (`mid_id`);
 
 --
@@ -100,20 +57,10 @@ ALTER TABLE `mids_2015130066`
 --
 
 --
--- AUTO_INCREMENT for table `mids_2015130056`
+-- AUTO_INCREMENT for table `mids_1`
 --
-ALTER TABLE `mids_2015130056`
-  MODIFY `mid_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `mids_2015130061`
---
-ALTER TABLE `mids_2015130061`
-  MODIFY `mid_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `mids_2015130066`
---
-ALTER TABLE `mids_2015130066`
-  MODIFY `mid_id` int(3) NOT NULL AUTO_INCREMENT;COMMIT;
+ALTER TABLE `mids_1`
+  MODIFY `mid_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

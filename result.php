@@ -22,6 +22,7 @@ if(!isset($_SESSION))
 			echo "SUCCESS : ".$name." has been ".$info;
 		else
 			echo "Failed";
+		
 	}
 	
 	function select_and_operate($user_id, $player_id,$operation,$type){

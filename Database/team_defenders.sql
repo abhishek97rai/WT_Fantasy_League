@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2017 at 09:20 PM
+-- Generation Time: Sep 24, 2017 at 02:36 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -25,76 +25,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `defenders_2015130056`
+-- Table structure for table `defenders_1`
 --
 
-CREATE TABLE `defenders_2015130056` (
+CREATE TABLE `defenders_1` (
   `defender_id` int(3) NOT NULL,
   `player_id` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `defenders_2015130056`
+-- Dumping data for table `defenders_1`
 --
 
-INSERT INTO `defenders_2015130056` (`defender_id`, `player_id`) VALUES
-(5, 2007),
-(6, 2003),
-(9, 2002),
-(10, 2005);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `defenders_2015130061`
---
-
-CREATE TABLE `defenders_2015130061` (
-  `defender_id` int(11) NOT NULL,
-  `player_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `defenders_2015130061`
---
-
-INSERT INTO `defenders_2015130061` (`defender_id`, `player_id`) VALUES
-(1, 2003),
-(2, 2004),
-(3, 2007),
-(4, 2010);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `defenders_2015130066`
---
-
-CREATE TABLE `defenders_2015130066` (
-  `defender_id` int(3) NOT NULL,
-  `player_id` int(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `defenders_1` (`defender_id`, `player_id`) VALUES
+(4, 2007),
+(5, 2010),
+(6, 2013),
+(7, 2006);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `defenders_2015130056`
+-- Indexes for table `defenders_1`
 --
-ALTER TABLE `defenders_2015130056`
-  ADD PRIMARY KEY (`defender_id`);
-
---
--- Indexes for table `defenders_2015130061`
---
-ALTER TABLE `defenders_2015130061`
-  ADD PRIMARY KEY (`defender_id`);
-
---
--- Indexes for table `defenders_2015130066`
---
-ALTER TABLE `defenders_2015130066`
+ALTER TABLE `defenders_1`
   ADD PRIMARY KEY (`defender_id`);
 
 --
@@ -102,20 +58,10 @@ ALTER TABLE `defenders_2015130066`
 --
 
 --
--- AUTO_INCREMENT for table `defenders_2015130056`
+-- AUTO_INCREMENT for table `defenders_1`
 --
-ALTER TABLE `defenders_2015130056`
-  MODIFY `defender_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT for table `defenders_2015130061`
---
-ALTER TABLE `defenders_2015130061`
-  MODIFY `defender_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `defenders_2015130066`
---
-ALTER TABLE `defenders_2015130066`
-  MODIFY `defender_id` int(3) NOT NULL AUTO_INCREMENT;COMMIT;
+ALTER TABLE `defenders_1`
+  MODIFY `defender_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

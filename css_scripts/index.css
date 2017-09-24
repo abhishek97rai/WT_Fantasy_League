@@ -3,13 +3,15 @@
 	color : #FFFFFF;
 	background-image: url("backgrounds/wilshere.gif");
     background-repeat: repeat-x;
+	background-size: cover;
 }
 
 .right-side-pane{
 	text-align : left;
-	color : #FFFFFF;
+	color : #000000;
 	background-image: url("backgrounds/toplay.gif");
     background-repeat: repeat-x;
+	background-size: cover;
 }
 
 .button-text{
@@ -18,4 +20,9 @@
 
 .blackbg{
 	background-color : #000000;
+}
+
+body{
+	background-image: url('backgrounds/white.jpg');
+	background-size: cover;
 }
