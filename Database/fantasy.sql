@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2017 at 02:35 PM
+-- Generation Time: Sep 24, 2017 at 09:21 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -55,7 +55,31 @@ INSERT INTO `football_defenders` (`player_id`, `player_name`, `player_value`, `p
 (2013, 'Philip Lahm', 12, 0),
 (2014, 'Dani Alves', 16, 0),
 (2015, 'Diego Godin', 18, 0),
-(2016, 'Dani Carvajal', 17, 0);
+(2016, 'Dani Carvajal', 17, 0),
+(2018, 'Thiago Silva', 19, 0),
+(2019, 'Pepe', 16, 0),
+(2020, 'Mats Hummels', 17, 0),
+(2022, 'Gerard Pique', 18, 0),
+(2023, 'Stephan Lichtsteiner', 18, 0),
+(2024, 'Alex Sandro', 18, 0),
+(2025, 'Phil Jones', 15, 0),
+(2026, 'Chris Smalling', 15, 0),
+(2027, 'Vincent Kompany', 19, 0),
+(2028, 'Danilo', 15, 0),
+(2029, 'Gary Cahill', 16, 0),
+(2030, 'Cesar Azpilicueta', 17, 0),
+(2031, 'Leighton Baines', 14, 0),
+(2032, 'Sergio Roberto', 16, 0),
+(2033, 'Javier Maschareno', 16, 0),
+(2034, 'Thomas Varmeleon', 15, 0),
+(2035, 'Theo Hernandez', 16, 0),
+(2036, 'Nacho', 15, 0),
+(2037, 'Nicolás Otamendi', 16, 0),
+(2038, 'Filipe Luis', 15, 0),
+(2039, 'Juanfron', 15, 0),
+(2040, 'Kolo Toure', 14, 0),
+(2041, 'Dejan Lovren', 14, 0),
+(2042, 'Darijo Srna', 16, 0);
 
 -- --------------------------------------------------------
 
@@ -88,7 +112,6 @@ INSERT INTO `football_forwards` (`player_id`, `player_name`, `player_value`, `pl
 (4011, 'Karim Benzema', 28, 0),
 (4012, 'Paulo Dybala', 31, 0),
 (4013, 'Mario Mandzukic', 25, 0),
-(4014, 'Marco Reus', 30, 0),
 (4015, 'Roberto Firmino', 20, 0),
 (4016, 'Olivier Giroud', 16, 0),
 (4017, 'Alvaro Morata', 25, 0),
@@ -124,8 +147,16 @@ CREATE TABLE `football_goalies` (
 --
 
 INSERT INTO `football_goalies` (`player_id`, `player_name`, `player_value`, `player_points`) VALUES
-(1001, 'Manuel Neuer', 31, 0),
-(1002, 'Petr Cech', 21, 0);
+(1001, 'Manuel Neuer', 25, 0),
+(1002, 'Petr Cech', 21, 0),
+(1003, 'Victor Valdes', 17, 0),
+(1004, 'David de gea', 24, 0),
+(1005, 'Thibaut Courtouis', 25, 0),
+(1006, 'Joe Hart', 18, 0),
+(1007, 'Iker Casillas', 17, 0),
+(1008, 'Diego Lopez', 16, 0),
+(1009, 'Gianlugi Buffon', 22, 0),
+(1010, 'Claudio Bravo', 19, 0);
 
 -- --------------------------------------------------------
 
@@ -170,7 +201,20 @@ INSERT INTO `football_mids` (`player_id`, `player_name`, `player_value`, `player
 (3023, 'Marco Asensio', 22, 0),
 (3024, 'Blaise Matuidi', 25, 0),
 (3025, 'Ivan Perisic', 18, 0),
-(3026, 'Mohd Salah', 25, 0);
+(3026, 'Mohd Salah', 25, 0),
+(3027, 'Marco Reus', 20, 0),
+(3028, 'James Rodriguez', 20, 0),
+(3029, 'Gus Payet', 19, 0),
+(3032, 'Frank Ribery', 20, 0),
+(3033, 'Sergio Busquets', 19, 0),
+(3034, 'Xavi Hernandez', 20, 0),
+(3035, 'David Beckham', 20, 0),
+(3036, 'Michael Ballack', 20, 0),
+(3037, 'Toni Kroos', 20, 0),
+(3038, 'Juan Mata', 18, 0),
+(3039, 'Santi Cazorla', 19, 0),
+(3040, 'Xabi Alonso', 19, 0),
+(3041, 'Yaya Toure', 20, 0);
 
 -- --------------------------------------------------------
 
@@ -190,7 +234,36 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`user_id`, `user_full_name`, `user_name`, `user_password`) VALUES
-(1, 'Manas Shukla', 'manas97', 'gooner');
+(1, 'Manas Shukla', 'manas97', 'gooner'),
+(2, 'Kapil Patil', 'kaplan', 'gooner');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `selected`
+--
+
+CREATE TABLE `selected` (
+  `shirt` int(3) NOT NULL,
+  `player_id` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `selected`
+--
+
+INSERT INTO `selected` (`shirt`, `player_id`) VALUES
+(2, 2005),
+(3, 2025),
+(4, 2013),
+(5, 2028),
+(6, 1008),
+(7, 3019),
+(8, 3029),
+(9, 3012),
+(10, 4023),
+(11, 4028),
+(12, 4021);
 
 -- --------------------------------------------------------
 
@@ -212,7 +285,8 @@ CREATE TABLE `team_details` (
 --
 
 INSERT INTO `team_details` (`team_id`, `user_id`, `team_name`, `team_value`, `team_points`, `team_eligibility`) VALUES
-(1, 1, 'Gunners Forever', 224, 0, 1);
+(1, 1, 'Gunners Forever', 194, 0, 1),
+(2, 2, 'Divers XI', 21, 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -249,6 +323,12 @@ ALTER TABLE `login`
   ADD UNIQUE KEY `login_index` (`user_id`);
 
 --
+-- Indexes for table `selected`
+--
+ALTER TABLE `selected`
+  ADD PRIMARY KEY (`shirt`);
+
+--
 -- Indexes for table `team_details`
 --
 ALTER TABLE `team_details`
@@ -262,7 +342,7 @@ ALTER TABLE `team_details`
 -- AUTO_INCREMENT for table `football_defenders`
 --
 ALTER TABLE `football_defenders`
-  MODIFY `player_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2017;
+  MODIFY `player_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2043;
 --
 -- AUTO_INCREMENT for table `football_forwards`
 --
@@ -272,22 +352,27 @@ ALTER TABLE `football_forwards`
 -- AUTO_INCREMENT for table `football_goalies`
 --
 ALTER TABLE `football_goalies`
-  MODIFY `player_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1003;
+  MODIFY `player_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1011;
 --
 -- AUTO_INCREMENT for table `football_mids`
 --
 ALTER TABLE `football_mids`
-  MODIFY `player_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3027;
+  MODIFY `player_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3042;
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `selected`
+--
+ALTER TABLE `selected`
+  MODIFY `shirt` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `team_details`
 --
 ALTER TABLE `team_details`
-  MODIFY `team_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+  MODIFY `team_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
