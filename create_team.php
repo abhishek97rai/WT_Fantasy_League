@@ -262,7 +262,7 @@ tbody td, thead th {
 			<h2 style="text-align:center;">Player Pool</h2>
 			<br>
 			<ul class="nav nav-tabs">
-				<li><a data-toggle="tab" href="#goalkeepers">Goalkeepers</a></li>
+				<li class="active"><a data-toggle="tab" href="#goalkeepers">Goalkeepers</a></li>
 				<li><a data-toggle="tab" href="#defenders">Defenders</a></li>
 				<li><a data-toggle="tab" href="#midfielders">Midfielders</a></li>
 				<li><a data-toggle="tab" href="#forwards">Forwards</a></li>
