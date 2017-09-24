@@ -24,7 +24,7 @@ if(!isset($_SESSION))
 		<ul class="nav navbar-nav">
 		  <li <?php if($_SERVER['PHP_SELF'] == '/Fantasy/navbar.php') echo 'class="active"'?>><a href="index.php">Home</a></li>
 		  <li <?php if($_SERVER['PHP_SELF'] == '/Fantasy/dashboard.php') echo 'class="active"'?>><a href="dashboard.php">Dashboard</a></li>
-		  <li <?php if($_SERVER['PHP_SELF'] == '/Fantasy/my_team.php') echo 'class="active"'?>><a href="create_team.php">My Team</a></li>
+		  <li <?php if($_SERVER['PHP_SELF'] == '/Fantasy/create_team.php') echo 'class="active"'?>><a href="create_team.php">My Team</a></li>
 		  <li <?php if($_SERVER['PHP_SELF'] == '/Fantasy/scores.php') echo 'class="active"'?>><a href="scores.php">Scores</a></li>
 		  <li <?php if($_SERVER['PHP_SELF'] == '/Fantasy/points.php') echo 'class="active"'?>><a href="points.php">Point Details</a></li>
 		</ul>
