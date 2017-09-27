@@ -41,7 +41,7 @@ if(!isset($_SESSION))
 			
 			if(empty($test)){
 			echo "aigt we here";
-			$query = "INSERT INTO clubs.club_".$Num" (shirt, player_id) VALUES(NULL,".$player_id.")";
+			$query = "INSERT INTO clubs.club_".$Num." (shirt, player_id) VALUES(NULL,".$player_id.")";
 			$query_2 = "INSERT INTO selected (shirt, player_id) VALUES(NULL,".$player_id.")";
 			}else{
 				echo "FAIL TRUED  ";

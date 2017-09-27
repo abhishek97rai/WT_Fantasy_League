@@ -1,0 +1,28 @@
+.left-side-pane{
+	text-align : center;
+	color : #FFFFFF;
+	background-image: url("backgrounds/wilshere.gif");
+    background-repeat: repeat-x;
+	background-size: cover;
+}
+
+.right-side-pane{
+	text-align : left;
+	color : #000000;
+	background-image: url("backgrounds/toplay.gif");
+    background-repeat: repeat-x;
+	background-size: cover;
+}
+
+.button-text{
+	font-size: 15px;
+}
+
+.blackbg{
+	background-color : #000000;
+}
+
+body{
+	background-image: url('backgrounds/white.jpg');
+	background-size: cover;
+}

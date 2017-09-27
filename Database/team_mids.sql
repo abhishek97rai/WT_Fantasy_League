@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2017 at 02:37 PM
+-- Generation Time: Sep 28, 2017 at 12:37 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -42,6 +42,117 @@ INSERT INTO `mids_1` (`mid_id`, `player_id`) VALUES
 (2, 3011),
 (3, 3022);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mids_2`
+--
+
+CREATE TABLE `mids_2` (
+  `mid_id` int(3) NOT NULL,
+  `player_id` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mids_3`
+--
+
+CREATE TABLE `mids_3` (
+  `mid_id` int(3) NOT NULL,
+  `player_id` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mids_3`
+--
+
+INSERT INTO `mids_3` (`mid_id`, `player_id`) VALUES
+(1, 3004),
+(2, 3022),
+(3, 3021);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mids_4`
+--
+
+CREATE TABLE `mids_4` (
+  `mid_id` int(3) NOT NULL,
+  `player_id` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mids_4`
+--
+
+INSERT INTO `mids_4` (`mid_id`, `player_id`) VALUES
+(1, 3006),
+(3, 3020),
+(4, 3023);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mids_5`
+--
+
+CREATE TABLE `mids_5` (
+  `mid_id` int(3) NOT NULL,
+  `player_id` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mids_5`
+--
+
+INSERT INTO `mids_5` (`mid_id`, `player_id`) VALUES
+(1, 3020),
+(2, 3002),
+(4, 3007);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mids_6`
+--
+
+CREATE TABLE `mids_6` (
+  `mid_id` int(3) NOT NULL,
+  `player_id` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mids_6`
+--
+
+INSERT INTO `mids_6` (`mid_id`, `player_id`) VALUES
+(1, 3012),
+(2, 3020),
+(3, 3027);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mids_7`
+--
+
+CREATE TABLE `mids_7` (
+  `mid_id` int(3) NOT NULL,
+  `player_id` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mids_7`
+--
+
+INSERT INTO `mids_7` (`mid_id`, `player_id`) VALUES
+(1, 3005),
+(2, 3024),
+(3, 3018);
+
 --
 -- Indexes for dumped tables
 --
@@ -53,6 +164,42 @@ ALTER TABLE `mids_1`
   ADD PRIMARY KEY (`mid_id`);
 
 --
+-- Indexes for table `mids_2`
+--
+ALTER TABLE `mids_2`
+  ADD PRIMARY KEY (`mid_id`);
+
+--
+-- Indexes for table `mids_3`
+--
+ALTER TABLE `mids_3`
+  ADD PRIMARY KEY (`mid_id`);
+
+--
+-- Indexes for table `mids_4`
+--
+ALTER TABLE `mids_4`
+  ADD PRIMARY KEY (`mid_id`);
+
+--
+-- Indexes for table `mids_5`
+--
+ALTER TABLE `mids_5`
+  ADD PRIMARY KEY (`mid_id`);
+
+--
+-- Indexes for table `mids_6`
+--
+ALTER TABLE `mids_6`
+  ADD PRIMARY KEY (`mid_id`);
+
+--
+-- Indexes for table `mids_7`
+--
+ALTER TABLE `mids_7`
+  ADD PRIMARY KEY (`mid_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -60,6 +207,36 @@ ALTER TABLE `mids_1`
 -- AUTO_INCREMENT for table `mids_1`
 --
 ALTER TABLE `mids_1`
+  MODIFY `mid_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `mids_2`
+--
+ALTER TABLE `mids_2`
+  MODIFY `mid_id` int(3) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `mids_3`
+--
+ALTER TABLE `mids_3`
+  MODIFY `mid_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `mids_4`
+--
+ALTER TABLE `mids_4`
+  MODIFY `mid_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `mids_5`
+--
+ALTER TABLE `mids_5`
+  MODIFY `mid_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `mids_6`
+--
+ALTER TABLE `mids_6`
+  MODIFY `mid_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `mids_7`
+--
+ALTER TABLE `mids_7`
   MODIFY `mid_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

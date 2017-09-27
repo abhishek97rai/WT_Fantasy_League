@@ -9,66 +9,18 @@ if(!isset($_SESSION))
 		die();
 	}
 	
-$Num = $_GET['num'];	
+$t1 = $_GET['t1'];
+$t2 = $_GET['t2'];	
 include("config.php");
 include("new_data.php");
+
+//include ("js_scripts/transfer.js");
 
 $result = mysqli_query($db,"UPDATE `team_details` SET `team_value` =".$net_team_value." WHERE `team_details`.`user_id` = ".$user_id);
 
 $team_eligibility = 1;
 
 $result = mysqli_query($db,"UPDATE `team_details` SET `team_eligibility` =".$team_eligibility." WHERE `team_details`.`user_id` = ".$user_id); ?>
-
-<script>
-	function aight(id, type){
-		//alert(id);
-		var first = id[0];
-		//alert(first);
-		switch(first){
-			case '1':
-				pos = 'goalie';
-				break;
-			case '2':
-				pos = 'defender';
-				break;
-			case '3':
-				pos = 'mid';
-				break;
-			case '4':
-				pos = 'forward';
-				break;
-		}
-		//alert(pos);
-		$.post( 
-            "new_result.php",
-            { pid: id,
-				operation: type,
-				position: pos
-				num : <?php echo($Num); ?>},
-            function(data) {
-                alert(data);
-				location.reload();
-                }
-            );
-	}
-	
-	$(document).ready(function() {
-			
-            $("#driver").click(function(event){
-				
-               $.post( 
-                  "result.php",
-                  { name: "Zara" },
-                  function(data) {
-                     $('#stage').html(data);
-                  }
-               );
-					
-            });
-				
-         });
-
-</script>
 
 <style>
 
@@ -108,6 +60,7 @@ tbody td, thead th {
 
 </style>
 
+<html>
 <head>
     <title><?php echo("Club Number ".$Num); ?></title>
     <meta charset="utf-8">
@@ -116,7 +69,40 @@ tbody td, thead th {
 	<link rel = "stylesheet" type = "text/css" href = "css_scripts/dashboard.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<script src="js_scripts/transfers.js"></script>
+	<script>
+	
+	function aight(id, type){
+		//alert(id);
+		var first = id[0];
+		//alert(first);
+		switch(first){
+			case '1':
+				pos = 'goalie';
+				break;
+			case '2':
+				pos = 'defender';
+				break;
+			case '3':
+				pos = 'mid';
+				break;
+			case '4':
+				pos = 'forward';
+				break;
+		}
+		//alert(pos);
+		$.post( 
+            "new_result.php",
+            { pid: id,
+				operation: type,
+				position: pos,
+			num : <?php echo($Num); ?>},
+            function(data) {
+                alert(data);
+				location.reload();
+                }
+            );
+	}
+	</script>
 </head>
 
 <body>
@@ -303,3 +289,63 @@ tbody td, thead th {
 		</div>	
 		</div>
 </body>
+</html>
+
+<?php
+/*<script>
+	alert("ANDKABA");
+	
+	function aight(id, type){
+		alert(id);
+		var first = id[0];
+		//alert(first);
+		switch(first){
+			case '1':
+				pos = 'goalie';
+				break;
+			case '2':
+				pos = 'defender';
+				break;
+			case '3':
+				pos = 'mid';
+				break;
+			case '4':
+				pos = 'forward';
+				break;
+		}
+		//alert(pos);
+		$.post( 
+            "new_result.php",
+            { pid: id,
+				operation: type,
+				position: pos
+			num : 1,}
+            function(data) {
+                alert(data);
+				location.reload();
+                }
+            );
+	}
+	
+	function lol(){
+		alert("LOL!!");
+	}
+	
+	$(document).ready(function() {
+			
+            $("#driver").click(function(event){
+				
+               $.post( 
+                  "result.php",
+                  { name: "Zara" },
+                  function(data) {
+                     $('#stage').html(data);
+                  }
+               );
+					
+            });
+				
+         });
+
+</script>*/
+?>

@@ -64,7 +64,7 @@ if($eG && $eD && $eM && $eF && $net_team_value < 226){
 $result = mysqli_query($db,"UPDATE `team_details` SET `team_eligibility` =".$team_eligibility." WHERE `team_details`.`user_id` = ".$user_id);
 ?>
 
-<script>
+<script>	
 	function aight(id, type){
 		//alert(id);
 		var first = id[0];

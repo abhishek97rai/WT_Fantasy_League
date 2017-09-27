@@ -26,7 +26,7 @@ if(!isset($_SESSION))
 		  <li <?php if($_SERVER['PHP_SELF'] == '/Fantasy/dashboard.php') echo 'class="active"'?>><a href="dashboard.php">Dashboard</a></li>
 		  <li <?php if($_SERVER['PHP_SELF'] == '/Fantasy/create_team.php') echo 'class="active"'?>><a href="create_team.php">My Team</a></li>
 		  <li <?php if($_SERVER['PHP_SELF'] == '/Fantasy/scores.php') echo 'class="active"'?>><a href="scores.php">Scores</a></li>
-		  <li <?php if($_SERVER['PHP_SELF'] == '/Fantasy/points.php') echo 'class="active"'?>><a href="points.php">Point Details</a></li>
+		  <li <?php if($_SERVER['PHP_SELF'] == '/Fantasy/points.php') echo 'class="active"'?>><a href="points.php">Players</a></li>
 		</ul>
 		<?php if(!isset($_SESSION['current_username'])){?>
 		<ul class="nav navbar-nav navbar-right">

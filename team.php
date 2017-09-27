@@ -1,10 +1,10 @@
-<html lang="en">
-<style>
-</style>
-<?php
-//include ("css_scripts/dashboard.css");
-//Script to fetch pointsh
+<?php 
 include ("config.php");
+
+if(!isset($_SESSION)){
+	session_start();
+}
+
 $result = mysqli_query($db,"SELECT * from results");
 $line = mysqli_fetch_assoc($result);
 
@@ -13,13 +13,9 @@ if($line['show_res'] == 0){
 	die();
 }
 
-if(!isset($_SESSION)){
-	session_start();
-}
-
 if(isset($_SESSION['current_username'])){	
 	//global $db;
-	$user = $_SESSION['user_id'];
+	$user = $_GET['id'];
 	
 	//echo($user);
 	
@@ -76,13 +72,12 @@ if(isset($_SESSION['current_username'])){
 	$total = $line['team_points'];
 	$rank = $line['team_rank'];
 	
-	$result = mysqli_query($db,'SELECT * FROM team_details ORDER BY team_rank ASC');
+	//$result = mysqli_query($db,'SELECT * FROM team_details ORDER BY team_rank ASC');
 	
 	//if (!empty($result)){
 		//echo ("SUCCESS FOR : ".$user."<br>");
 	//}
 }
-
 ?>
 <head>
     <title>Dashboard</title>
@@ -93,9 +88,10 @@ if(isset($_SESSION['current_username'])){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-	
-	<div class="container-fluid">
+
+<div class="container-fluid">
 		<div class="header">
 			<h1>My Dashboard</h1>
 		</div>
@@ -104,10 +100,10 @@ if(isset($_SESSION['current_username'])){
 	<?php
 	include ("navbar.php");
 	?>
-	
-	<div class="row" style="margin-left: 20px; margin-right: 20px; ">
-		<div class="col-md-6">
-			<h3>Your Scores</h3>
+
+
+<h3 align='center'><?php echo($line['team_name']);?></h3>
+<br><br>
 			<table class="table table-condensed">
 				<thead>
 					<tr>
@@ -124,71 +120,13 @@ if(isset($_SESSION['current_username'])){
 				<?php }?>
 				</tbody>
 			</table>
-		</div>
-		<div class="col-md-6">
-			<h3>Leaderboard</h3>
-			<table class="table table-condensed">
-				<thead>
-					<tr>
-						<th>Rank</th>
-						<th>Name</th>
-						<th>Team</th>
-						<th>Points</th>
-					</tr>
-				</thead>
-				<tbody>
-				<?php while($line = mysqli_fetch_assoc($result)){
-					$res = mysqli_query($db,'SELECT user_full_name FROM login WHERE login.user_id = '.$line['user_id']);
-					$line_in = mysqli_fetch_assoc($res);
-					?>
-					<tr id = <?php echo($line['user_id']);?>>
-						<td><?php echo($line['team_rank']);?></td>
-						<td><?php echo($line_in['user_full_name']);?></td>
-					<td><a href='team.php?id=<?php echo($line['user_id']);?>'><?php echo($line['team_name']);?></a></td>
-				<td><?php echo($line['team_points']); }?></td>
-					</tr>
-				</tbody>
-			</table>
+			
 			<br>
-			<h3>Top 3 Goal Scorers</h3>
-			<table class="table table-condensed">
-				<thead>
-					<tr>
-						<th>Rank</th>
-						<th>Player</th>
-						<th>Team</th>
-						<th>Goals</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td>Lionel Messi</td>
-						<td>Barcelona</td>
-						<td>10</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>Cristiano Ronaldo</td>
-						<td>Real Madrid</td>
-						<td>9</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>Alexis Sanchez</td>
-						<td>Arsenal</td>
-						<td>7</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-	<br>
 	<div class="row" style="margin-left: 20px; margin-right: 20px;">
 		<div class="col-md-4">
 			<h3>Total Points: <?php echo($total);?></h3>
 			<h3>Rank: <?php echo($rank);?></h3>
 		</div>
 	</div>
-</body>
-</html>
+			
+</body>			

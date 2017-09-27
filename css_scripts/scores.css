@@ -1,0 +1,105 @@
+body{
+	padding-right:0px !important;
+	margin-right:0px !important;
+}
+.match1{
+	height: 190px;
+    width: 50%;
+    background-color: midnightblue;
+	border-radius: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.title1{
+	text-align: center;
+	background-color: midnightblue;
+	color: white;
+	padding: 10px;
+	margin: 0px;
+}
+
+.score1{
+	text-align: center;
+	background-color: lightgrey;
+	padding: 10px;
+	margin: 0px;
+	position: relative;
+}
+
+.goals1{
+	background-color: darkmagenta; 
+	color: white; 
+	padding: 5px;
+	border-radius: 10px;
+	margin: auto;
+	position: absolute;
+}
+
+.match2{
+	height: 190px;
+    width: 50%;
+    background-color: green;
+	border-radius: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.title2{
+	text-align: center;
+	background-color: green;
+	color: white;
+	padding: 10px;
+	margin: 0px;
+}
+
+.match3{
+	height: 190px;
+    width: 50%;
+    background-color: mediumvioletred;
+	border-radius: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.title3{
+	text-align: center;
+	background-color: mediumvioletred;
+	color: white;
+	padding: 10px;
+	margin: 0px;
+}
+
+.match4{
+	height: 190px;
+    width: 50%;
+    background-color: orange;
+	border-radius: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.title4{
+	text-align: center;
+	background-color: orange;
+	color: white;
+	padding: 10px;
+	margin: 0px;
+}
+
+.match5{
+	height: 190px;
+    width: 50%;
+    background-color: black;
+	border-radius: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.title5{
+	text-align: center;
+	background-color: black;
+	color: white;
+	padding: 10px;
+	margin: 0px;
+}
