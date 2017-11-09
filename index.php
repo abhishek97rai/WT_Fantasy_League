@@ -3,6 +3,12 @@
 //include("css_scripts/index.css");
 session_start();
 ?>
+.carousel img {
+        width:100% !important;
+        min-width:100 !important;
+        height: auto;
+    }
+
 </style>
 
 <html lang="en">
@@ -41,48 +47,106 @@ session_start();
 	
 	<div id="nav-placeholder">
 	</div>
-<div class="container-fluid">	
-	<br><br>
-	<div class = "row">
-		<div class="col-md-2">
+<div class="container-fluid">
+	<div class='row'>
+		<br><br><br>
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		  <ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3"></li>
+		  </ol>
+
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner">
+			<div class="item active">
+			  <img src="img/ins4.jpg" alt="Chicago">
+			</div>	
+		  
+			<div class="item">
+			  <img src="img/ins1.jpg" alt="Los Angeles">
+			</div>
+
+			<div class="item">
+			  <img src="img/ins2.jpg" alt="Chicago">
+			</div>
+			
+			<div class="item">
+			  <img src="img/ins3.jpg" alt="Chicago">
+			</div>
+		  </div>
+
+		  <!-- Left and right controls -->
+		  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			<span class="sr-only">Previous</span>
+		  </a>
+		  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+			<span class="sr-only">Next</span>
+		  </a>
 		</div>
-		<div class="col-md-4 left-side-pane">
-			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-		</div>
-		<div class="col-md-1">
-		</div>
-		
-		<div class="col-md-3">
-		<div class="row right-side-pane">
-		<p class="bg-primary">How To Play : </p>
-			<dl>
-				<dt>Create Account</dt>
-					<dd>Click Register to create account</dd>
-					<dd>Enter your details</dd>
-					<dd>Login with the entered details</dd>
-				<dt>Create Team</dt>
-					<dd>Select players of your choice</dd>
-					<dd>Sit back and relax as they accumulate points.</dd>
-			</dl>
-		
-		<br><br><br><br><br><br>
-		</div>
-		<br>
-		<div class="row">
+	</div>
+	<div class='row'>
+		<br><br><br>
 		<div class="col-md-6">
-			<a href="login.php">
-				<button type="button" class="btn btn-info btn-block"><p class="button-text">Click Here To Login</p></button>
-			</a>
-		<br>
+		<img class="img-responsive" src="img/top-scores.jpg" alt="Top Scores">
 		</div>
-		<div class="col-md-6">
-			<a href="register.php">
-				<button type="button" class="btn btn-info btn-block button-text"><p class="button-text">Click Here To Register</p></button>
-			</a>
-		</div>	
-		</div>
-		</div>
-		<div class="col-md-2">
+		<div class = 'col-md-6' style='padding-left:100px;'>
+		<h2><span>Points System : </span></h2>
+			<table class="table table-condensed">
+					<thead>
+						<tr>
+							<th>Position</th>
+							<th>Match Played</th>
+							<th>Goal Scored</th>
+							<th>Assist</th>
+							<th>Clean Sheet</th>
+							<th>Saves Made</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Goalkeeper</td>
+							<td>1</td>
+							<td>6</td>
+							<td>3</td>
+							<td>4</td>
+							<td>1 for every 2 saves</td>
+						</tr>
+						<tr>
+							<td>Defender</td>
+							<td>1</td>
+							<td>6</td>
+							<td>3</td>
+							<td>4</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>Midfielder</td>
+							<td>1</td>
+							<td>5</td>
+							<td>3</td>
+							<td>1</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>Forward</td>
+							<td>1</td>
+							<td>4</td>
+							<td>3</td>
+							<td>0</td>
+							<td>-</td>
+						</tr>
+					</tbody>
+			</table>
+			<br><br><br>
+			<div align='center'>
+			<a href='login.php' style='text-decoration:none; color:"#FFFFFF;'><button type="button" class="btn btn-success" style="width:500px; height:80px;"><h2>LOGIN</h2></button></a><br><br>
+			<a href='register.php' style='text-decoration:none; color:"#FFFFFF;'><button type="button" class="btn btn-success" style="width:500px; height:80px;"><h2>REGISTER</h2></button></a>
+			</div>
 		</div>
 	</div>
 </div>

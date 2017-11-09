@@ -41,6 +41,10 @@ if(isset($_SESSION['current_username'])){
 		$pts = $line['total_points'];
 		$player[$name]=$pts;
 	}
+}else{
+	echo("<script> alert('Must Login First!'); </script>");
+	header("Location: login.php");
+		die();
 }
 ?>
 
@@ -94,9 +98,14 @@ tbody td, thead th {
 </style>
 
 <body>
-<div class="container-fluid">
-		<div class="header">
-			<h1>Player Stats</h1>
+<div class="container-fluid" style="padding: 0px;">
+		<div class="header" style="width: 100%;">
+			<div style="display: margin-left: 0px; inline-block; float: left; text-align:right; padding-right: 10px; width: 50%; background-color: red; color: white;">
+				<h1>Player </h1>
+			</div>
+			<div style="display: inline-block; width: 50%; float: left; text-align:left; padding-left: 10px; background-color: blue; color: white;">
+				<h1>Stats </h1>
+			</div>
 		</div>
 	</div>
 	

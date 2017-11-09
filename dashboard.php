@@ -95,9 +95,14 @@ if(isset($_SESSION['current_username'])){
 </head>
 <body>
 	
-	<div class="container-fluid">
-		<div class="header">
-			<h1>My Dashboard</h1>
+	<div class="container-fluid" style="padding: 0px;">
+		<div class="header" style="width: 100%;">
+			<div style="display: margin-left: 0px; inline-block; float: left; text-align:right; padding-right: 10px; width: 50%; background-color: red; color: white;">
+				<h1>My</h1>
+			</div>
+			<div style="display: inline-block; width: 50%; float: left; text-align:left; padding-left: 10px; background-color: blue; color: white;">
+				<h1>Dashboard</h1>
+			</div>
 		</div>
 	</div>
 	
@@ -156,28 +161,28 @@ if(isset($_SESSION['current_username'])){
 					<tr>
 						<th>Rank</th>
 						<th>Player</th>
-						<th>Team</th>
 						<th>Goals</th>
+						<th>Assists</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td>1</td>
-						<td>Lionel Messi</td>
-						<td>Barcelona</td>
-						<td>10</td>
+						<td>Paulo Dybala</td>
+						<td>6</td>
+						<td>3</td>
 					</tr>
 					<tr>
 						<td>2</td>
 						<td>Cristiano Ronaldo</td>
-						<td>Real Madrid</td>
-						<td>9</td>
+						<td>6</td>
+						<td>1</td>
 					</tr>
 					<tr>
 						<td>3</td>
-						<td>Alexis Sanchez</td>
-						<td>Arsenal</td>
-						<td>7</td>
+						<td>Lionel Messi</td>
+						<td>5</td>
+						<td>1</td>
 					</tr>
 				</tbody>
 			</table>
@@ -185,9 +190,9 @@ if(isset($_SESSION['current_username'])){
 	</div>
 	<br>
 	<div class="row" style="margin-left: 20px; margin-right: 20px;">
-		<div class="col-md-4">
-			<h3>Total Points: <?php echo($total);?></h3>
-			<h3>Rank: <?php echo($rank);?></h3>
+		<div class="col-md-12">
+			<h3 align='center'>Total Points: <?php echo($total);?></h3>
+			<h3 align='center'>Rank: <?php echo($rank);?></h3>
 		</div>
 	</div>
 </body>

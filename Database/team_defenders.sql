@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2017 at 12:37 AM
+-- Generation Time: Nov 09, 2017 at 02:51 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -159,6 +159,48 @@ INSERT INTO `defenders_7` (`defender_id`, `player_id`) VALUES
 (3, 2024),
 (4, 2023);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `defenders_8`
+--
+
+CREATE TABLE `defenders_8` (
+  `defender_id` int(3) NOT NULL,
+  `player_id` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `defenders_8`
+--
+
+INSERT INTO `defenders_8` (`defender_id`, `player_id`) VALUES
+(1, 2005),
+(2, 2010),
+(3, 2013),
+(4, 2004);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `defenders_9`
+--
+
+CREATE TABLE `defenders_9` (
+  `defender_id` int(3) NOT NULL,
+  `player_id` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `defenders_9`
+--
+
+INSERT INTO `defenders_9` (`defender_id`, `player_id`) VALUES
+(1, 2002),
+(2, 2010),
+(3, 2027),
+(4, 2020);
+
 --
 -- Indexes for dumped tables
 --
@@ -206,6 +248,18 @@ ALTER TABLE `defenders_7`
   ADD PRIMARY KEY (`defender_id`);
 
 --
+-- Indexes for table `defenders_8`
+--
+ALTER TABLE `defenders_8`
+  ADD PRIMARY KEY (`defender_id`);
+
+--
+-- Indexes for table `defenders_9`
+--
+ALTER TABLE `defenders_9`
+  ADD PRIMARY KEY (`defender_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -243,6 +297,16 @@ ALTER TABLE `defenders_6`
 -- AUTO_INCREMENT for table `defenders_7`
 --
 ALTER TABLE `defenders_7`
+  MODIFY `defender_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `defenders_8`
+--
+ALTER TABLE `defenders_8`
+  MODIFY `defender_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `defenders_9`
+--
+ALTER TABLE `defenders_9`
   MODIFY `defender_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -31,7 +31,9 @@
 		}
 	}
 	}else{
+		echo("<script> alert('You are already logged in') </script>");
 		header("Location: index.php");
+		die();
 	}
 	
 	include ("navbar.php");

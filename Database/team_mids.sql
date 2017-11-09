@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2017 at 12:37 AM
+-- Generation Time: Nov 09, 2017 at 02:53 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -153,6 +153,46 @@ INSERT INTO `mids_7` (`mid_id`, `player_id`) VALUES
 (2, 3024),
 (3, 3018);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mids_8`
+--
+
+CREATE TABLE `mids_8` (
+  `mid_id` int(3) NOT NULL,
+  `player_id` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mids_8`
+--
+
+INSERT INTO `mids_8` (`mid_id`, `player_id`) VALUES
+(1, 3003),
+(2, 3017),
+(3, 3019);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mids_9`
+--
+
+CREATE TABLE `mids_9` (
+  `mid_id` int(3) NOT NULL,
+  `player_id` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mids_9`
+--
+
+INSERT INTO `mids_9` (`mid_id`, `player_id`) VALUES
+(1, 3039),
+(2, 3029),
+(3, 3008);
+
 --
 -- Indexes for dumped tables
 --
@@ -200,6 +240,18 @@ ALTER TABLE `mids_7`
   ADD PRIMARY KEY (`mid_id`);
 
 --
+-- Indexes for table `mids_8`
+--
+ALTER TABLE `mids_8`
+  ADD PRIMARY KEY (`mid_id`);
+
+--
+-- Indexes for table `mids_9`
+--
+ALTER TABLE `mids_9`
+  ADD PRIMARY KEY (`mid_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -237,6 +289,16 @@ ALTER TABLE `mids_6`
 -- AUTO_INCREMENT for table `mids_7`
 --
 ALTER TABLE `mids_7`
+  MODIFY `mid_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `mids_8`
+--
+ALTER TABLE `mids_8`
+  MODIFY `mid_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `mids_9`
+--
+ALTER TABLE `mids_9`
   MODIFY `mid_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

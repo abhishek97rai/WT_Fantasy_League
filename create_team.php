@@ -164,9 +164,14 @@ tbody td, thead th {
 </head>
 
 <body>
-<div class="container-fluid">
-		<div class="header">
-			<h1 style="text-align: center;"><?php echo($team_name); ?></h1>
+<div class="container-fluid" style="padding: 0px;">
+		<div class="header" style="width: 100%;">
+			<div style="display: margin-left: 0px; inline-block; float: left; text-align:right; padding-right: 10px; width: 50%; background-color: red; color: white;">
+				<h1>Team Name: </h1>
+			</div>
+			<div style="display: inline-block; width: 50%; float: left; text-align:left; padding-left: 10px; background-color: blue; color: white;">
+				<h1><?php echo($team_name);?> </h1>
+			</div>
 		</div>
 	</div>
 	

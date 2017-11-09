@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2017 at 12:37 AM
+-- Generation Time: Nov 09, 2017 at 02:53 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -153,6 +153,46 @@ INSERT INTO `forwards_7` (`forward_id`, `player_id`) VALUES
 (2, 4007),
 (3, 4022);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `forwards_8`
+--
+
+CREATE TABLE `forwards_8` (
+  `forward_id` int(3) NOT NULL,
+  `player_id` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `forwards_8`
+--
+
+INSERT INTO `forwards_8` (`forward_id`, `player_id`) VALUES
+(1, 4016),
+(2, 4015),
+(3, 4018);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `forwards_9`
+--
+
+CREATE TABLE `forwards_9` (
+  `forward_id` int(3) NOT NULL,
+  `player_id` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `forwards_9`
+--
+
+INSERT INTO `forwards_9` (`forward_id`, `player_id`) VALUES
+(4, 4006),
+(5, 4029),
+(6, 4010);
+
 --
 -- Indexes for dumped tables
 --
@@ -200,6 +240,18 @@ ALTER TABLE `forwards_7`
   ADD PRIMARY KEY (`forward_id`);
 
 --
+-- Indexes for table `forwards_8`
+--
+ALTER TABLE `forwards_8`
+  ADD PRIMARY KEY (`forward_id`);
+
+--
+-- Indexes for table `forwards_9`
+--
+ALTER TABLE `forwards_9`
+  ADD PRIMARY KEY (`forward_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -237,7 +289,17 @@ ALTER TABLE `forwards_6`
 -- AUTO_INCREMENT for table `forwards_7`
 --
 ALTER TABLE `forwards_7`
-  MODIFY `forward_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
+  MODIFY `forward_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `forwards_8`
+--
+ALTER TABLE `forwards_8`
+  MODIFY `forward_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `forwards_9`
+--
+ALTER TABLE `forwards_9`
+  MODIFY `forward_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

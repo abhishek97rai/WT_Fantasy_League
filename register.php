@@ -5,6 +5,8 @@
 	$count=0;
 	$result="";
 	$success = false;
+	
+	if(!isset($_SESSION['current_username'])){
 	if($_POST){
 		
 		$myusername = mysqli_real_escape_string($db,$_POST['username']);
@@ -38,6 +40,10 @@
 		}else{
 			$error = 'invalid entry/database corrupt, just like Modi sarkar :O :(';
 		}
+	}
+	}else{
+		header("Location: index.php");
+		die();
 	}
 	
 	include ("navbar.php");

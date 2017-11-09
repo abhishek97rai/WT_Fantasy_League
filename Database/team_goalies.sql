@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2017 at 12:37 AM
+-- Generation Time: Nov 09, 2017 at 02:53 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -38,7 +38,7 @@ CREATE TABLE `goalies_1` (
 --
 
 INSERT INTO `goalies_1` (`goalie_id`, `player_id`) VALUES
-(1, 1002);
+(3, 1002);
 
 -- --------------------------------------------------------
 
@@ -148,6 +148,42 @@ CREATE TABLE `goalies_7` (
 INSERT INTO `goalies_7` (`goalie_id`, `player_id`) VALUES
 (1, 1003);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `goalies_8`
+--
+
+CREATE TABLE `goalies_8` (
+  `goalie_id` int(3) NOT NULL,
+  `player_id` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `goalies_8`
+--
+
+INSERT INTO `goalies_8` (`goalie_id`, `player_id`) VALUES
+(1, 1008);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `goalies_9`
+--
+
+CREATE TABLE `goalies_9` (
+  `goalie_id` int(3) NOT NULL,
+  `player_id` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `goalies_9`
+--
+
+INSERT INTO `goalies_9` (`goalie_id`, `player_id`) VALUES
+(1, 1008);
+
 --
 -- Indexes for dumped tables
 --
@@ -195,6 +231,18 @@ ALTER TABLE `goalies_7`
   ADD PRIMARY KEY (`goalie_id`);
 
 --
+-- Indexes for table `goalies_8`
+--
+ALTER TABLE `goalies_8`
+  ADD PRIMARY KEY (`goalie_id`);
+
+--
+-- Indexes for table `goalies_9`
+--
+ALTER TABLE `goalies_9`
+  ADD PRIMARY KEY (`goalie_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -202,7 +250,7 @@ ALTER TABLE `goalies_7`
 -- AUTO_INCREMENT for table `goalies_1`
 --
 ALTER TABLE `goalies_1`
-  MODIFY `goalie_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `goalie_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `goalies_2`
 --
@@ -232,6 +280,16 @@ ALTER TABLE `goalies_6`
 -- AUTO_INCREMENT for table `goalies_7`
 --
 ALTER TABLE `goalies_7`
+  MODIFY `goalie_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `goalies_8`
+--
+ALTER TABLE `goalies_8`
+  MODIFY `goalie_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `goalies_9`
+--
+ALTER TABLE `goalies_9`
   MODIFY `goalie_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

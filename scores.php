@@ -1,9 +1,13 @@
 <?php 
+
+include ('config.php');
 $result = mysqli_query($db,"SELECT * from results");
 $line = mysqli_fetch_assoc($result);
 
 if($line['show_res'] == 0){
 	header("Location: index.php");
+	die();
+	//echo("<script> alert('ENTERED in show_res = 0') </script>");
 }
 ?>
 
@@ -19,9 +23,14 @@ if($line['show_res'] == 0){
 	<link rel = "stylesheet" type = "text/css" href = "css_scripts/scores.css" />
 </head>
 <body>
-	<div class="container-fluid">
-		<div class="header">
-			<h1>Scores</h1>
+	<div class="container-fluid" style="padding: 0px;">
+		<div class="header" style="width: 100%;">
+			<div style="display: margin-left: 0px; inline-block; float: left; text-align:right; padding-right: 10px; width: 50%; background-color: red; color: white;">
+				<h1>Weekly </h1>
+			</div>
+			<div style="display: inline-block; width: 50%; float: left; text-align:left; padding-left: 10px; background-color: blue; color: white;">
+				<h1>Scores </h1>
+			</div>
 		</div>
 	</div>
 	<?php
@@ -46,7 +55,7 @@ if($line['show_res'] == 0){
 					<div class="match1">
 						<h3 class="title1">Match 1</h3>
 						<div class="score1">
-							<h3>Electabuzz United <span class="goals1">1 - 4</span> Vandelay Wolves</h3>
+							<h3>Electabuzz United <span class="goals1">1 - 4</span> <span align='right' style='padding-left : 60px;'>Vandelay Wolves</span></h3>
 						</div>
 					</div>
 					</a>
@@ -83,7 +92,7 @@ if($line['show_res'] == 0){
 					<div class="match2">
 						<h3 class="title2">Match 2</h3>
 						<div class="score1">
-							<h3>Kanto City <span class="goals1">2 - 2</span> Stepford Palace</h3>
+							<h3>Kanto City <span class="goals1">2 - 2</span> <span align='right' style='padding-left : 60px;'>Stepford Palace</span></h3>
 						</div>
 					</div>
 					</a>
@@ -121,7 +130,7 @@ if($line['show_res'] == 0){
 					<div class="match3">
 						<h3 class="title3">Match 3</h3>
 						<div class="score1">
-							<h3>Nameks <span class="goals1">1 - 0</span> Los Santos Albion</h3>
+							<h3>Nameks <span class="goals1">1 - 0</span> <span align='right' style='padding-left : 60px;'>Los Santos Albion</span></h3>
 						</div>
 					</div>
 					</a>
@@ -154,7 +163,7 @@ if($line['show_res'] == 0){
 					<div class="match4">
 						<h3 class="title4">Match 4</h3>
 						<div class="score1">
-							<h3>Zion Rovers <span class="goals1">1 - 3</span> Springfield United</h3>
+							<h3>Zion Rovers <span class="goals1">1 - 3</span> <span align='right' style='padding-left : 60px;'>Springfield United</span></h3>
 						</div>
 					</div>
 					</a>
@@ -191,7 +200,7 @@ if($line['show_res'] == 0){
 					<div class="match5">
 						<h3 class="title5">Match 5</h3>
 						<div class="score1">
-							<h3>Gotham United <span class="goals1">0 - 1</span> Central City</h3>
+							<h3>Gotham United <span class="goals1">0 - 1</span> <span align='right' style='padding-left : 60px;'>Central City</span></h3>
 						</div>
 					</div>
 					</a>
@@ -228,7 +237,7 @@ if($line['show_res'] == 0){
 					<div class="match1">
 						<h3 class="title1">Match 1</h3>
 						<div class="score1">
-							<h3>Electabuzz United <span class="goals1">1 - 2</span> Kanto City</h3>
+							<h3>Electabuzz United <span class="goals1">1 - 2</span> <span align='right' style='padding-left : 60px;'>Kanto City</span></h3>
 						</div>
 					</div>
 					</a>
@@ -264,7 +273,7 @@ if($line['show_res'] == 0){
 					<div class="match2">
 						<h3 class="title2">Match 2</h3>
 						<div class="score1">
-							<h3>Nameks <span class="goals1">0 - 1</span> Stepford Palace</h3>
+							<h3>Nameks <span class="goals1">0 - 1</span> <span align='right' style='padding-left : 60px;'>Stepford Palace</span></h3>
 						</div>
 					</div>
 					</a>
@@ -297,7 +306,7 @@ if($line['show_res'] == 0){
 					<div class="match3">
 						<h3 class="title3">Match 3</h3>
 						<div class="score1">
-							<h3>Zion Rovers <span class="goals1">2 - 3</span> Los Santos Albion</h3>
+							<h3>Zion Rovers <span class="goals1">2 - 3</span> <span align='right' style='padding-left : 60px;'>Los Santos Albion</span></h3>
 						</div>
 					</div>
 					</a>
@@ -334,7 +343,7 @@ if($line['show_res'] == 0){
 					<div class="match4">
 						<h3 class="title4">Match 4</h3>
 						<div class="score1">
-							<h3>Gotham United <span class="goals1">0 - 3</span> Springfield United</h3>
+							<h3>Gotham United <span class="goals1">0 - 3</span> <span align='right' style='padding-left : 60px;'>Springfield United</span></h3>
 						</div>
 					</div>
 					</a>
@@ -369,7 +378,7 @@ if($line['show_res'] == 0){
 					<div class="match5">
 						<h3 class="title5">Match 5</h3>
 						<div class="score1">
-							<h3>Central City <span class="goals1">1 - 3</span> Vandelay Wolves</h3>
+							<h3>Central City <span class="goals1">1 - 3</span> <span align='right' style='padding-left : 60px;'>Vandelay Wolves</span></h3>
 						</div>
 					</div>
 					</a>
@@ -408,7 +417,7 @@ if($line['show_res'] == 0){
 					<div class="match1">
 						<h3 class="title1">Match 1</h3>
 						<div class="score1">
-							<h3>Electabuzz United <span class="goals1">0 - 2</span> Nameks</h3>
+							<h3>Electabuzz United <span class="goals1">0 - 2</span> <span align='right' style='padding-left : 60px;'>Nameks</span></h3>
 						</div>
 					</div>
 					</a>
@@ -442,7 +451,7 @@ if($line['show_res'] == 0){
 					<div class="match2">
 						<h3 class="title2">Match 2</h3>
 						<div class="score1">
-							<h3>Kanto City <span class="goals1">1 - 5</span> Vandelay Wolves</h3>
+							<h3>Kanto City <span class="goals1">1 - 5</span> <span align='right' style='padding-left : 60px;'> Vandelay Wolves </span></h3>
 						</div>
 					</div>
 					</a>
@@ -479,7 +488,7 @@ if($line['show_res'] == 0){
 					<div class="match3">
 						<h3 class="title3">Match 3</h3>
 						<div class="score1">
-							<h3>Zion Rovers <span class="goals1">0 - 2</span> Stepford Palace</h3>
+							<h3>Zion Rovers <span class="goals1">0 - 2</span> <span align='right' style='padding-left : 60px;'>Stepford Palace</span></h3>
 						</div>
 					</div>
 					</a>
@@ -513,7 +522,7 @@ if($line['show_res'] == 0){
 					<div class="match4">
 						<h3 class="title4">Match 4</h3>
 						<div class="score1">
-							<h3>Gotham United <span class="goals1">3 - 4</span> Los Santos Albion</h3>
+							<h3>Gotham United <span class="goals1">3 - 4</span> <span align='right' style='padding-left : 60px;'>Los Santos Albion</span></h3>
 						</div>
 					</div>
 					</a>
@@ -553,7 +562,7 @@ if($line['show_res'] == 0){
 					<div class="match5">
 						<h3 class="title5">Match 5</h3>
 						<div class="score1">
-							<h3>Central City <span class="goals1">0 - 0</span> Springfield United</h3>
+							<h3>Central City <span class="goals1">0 - 0</span> <span align='right' style='padding-left : 60px;'>Springfield United</span></h3>
 						</div>
 					</div>
 					</a>
@@ -586,7 +595,7 @@ if($line['show_res'] == 0){
 					<div class="match1">
 						<h3 class="title1">Match 1</h3>
 						<div class="score1">
-							<h3>Electabuzz United <span class="goals1">1 - 1</span> Central City</h3>
+							<h3>Electabuzz United <span class="goals1">1 - 1</span> <span align='right' style='padding-left : 60px;'>Central City</span></h3>
 						</div>
 					</div>
 					</a>
@@ -621,7 +630,7 @@ if($line['show_res'] == 0){
 					<div class="match2">
 						<h3 class="title2">Match 2</h3>
 						<div class="score1">
-							<h3>Kanto City <span class="goals1">2 - 2</span> Gotham United</h3>
+							<h3>Kanto City <span class="goals1">2 - 2</span> <span align='right' style='padding-left : 60px;'>Gotham United</span></h3>
 						</div>
 					</div>
 					</a>
@@ -658,7 +667,7 @@ if($line['show_res'] == 0){
 					<div class="match3">
 						<h3 class="title3">Match 3</h3>
 						<div class="score1">
-							<h3>Nameks <span class="goals1">0 - 0</span> Zion Rovers</h3>
+							<h3>Nameks <span class="goals1">0 - 0</span> <span align='right' style='padding-left : 60px;'>Zion Rovers</span></h3>
 						</div>
 					</div>
 					</a>
@@ -689,7 +698,7 @@ if($line['show_res'] == 0){
 					<div class="match4">
 						<h3 class="title4">Match 4</h3>
 						<div class="score1">
-							<h3>Springfield United <span class="goals1">1 - 2</span> Stepford Palace</h3>
+							<h3>Springfield United <span class="goals1">1 - 2</span> <span align='right' style='padding-left : 60px;'>Stepford Palace</span></h3>
 						</div>
 					</div>
 					</a>
@@ -725,7 +734,7 @@ if($line['show_res'] == 0){
 					<div class="match5">
 						<h3 class="title5">Match 5</h3>
 						<div class="score1">
-							<h3>Los Santos Albion <span class="goals1">1 - 1</span> Vandelay Wolves</h3>
+							<h3>Los Santos Albion <span class="goals1">1 - 1</span> <span align='right' style='padding-left : 60px;'>Vandelay Wolves</span></h3>
 						</div>
 					</div>
 					</a>
@@ -762,7 +771,7 @@ if($line['show_res'] == 0){
 					<div class="match1">
 						<h3 class="title1">Match 1</h3>
 						<div class="score1">
-							<h3>Electabuzz United <span class="goals1">0 - 2</span> Los Santos Albion</h3>
+							<h3>Electabuzz United <span class="goals1">0 - 2</span> <span align='right' style='padding-left : 60px;'>Los Santos Albion</span></h3>
 						</div>
 					</div>
 					</a>
@@ -796,7 +805,7 @@ if($line['show_res'] == 0){
 					<div class="match2">
 						<h3 class="title2">Match 2</h3>
 						<div class="score1">
-							<h3>Kanto City <span class="goals1">0 - 2</span> Springfield United</h3>
+							<h3>Kanto City <span class="goals1">0 - 2</span> <span align='right' style='padding-left : 60px;'>Springfield United</span></h3>
 						</div>
 					</div>
 					</a>
@@ -830,7 +839,7 @@ if($line['show_res'] == 0){
 					<div class="match3">
 						<h3 class="title3">Match 3</h3>
 						<div class="score1">
-							<h3>Nameks <span class="goals1">1 - 3</span> Central City</h3>
+							<h3>Nameks <span class="goals1">1 - 3</span> <span align='right' style='padding-left : 60px;'>Central City</span></h3>
 						</div>
 					</div>
 					</a>
@@ -867,7 +876,7 @@ if($line['show_res'] == 0){
 					<div class="match4">
 						<h3 class="title4">Match 4</h3>
 						<div class="score1">
-							<h3>Zion Rovers <span class="goals1">0 - 1</span> Gotham United</h3>
+							<h3>Zion Rovers <span class="goals1">0 - 1</span> <span align='right' style='padding-left : 60px;'>Gotham United</span></h3>
 						</div>
 					</div>
 					</a>
@@ -900,7 +909,7 @@ if($line['show_res'] == 0){
 					<div class="match5">
 						<h3 class="title5">Match 5</h3>
 						<div class="score1">
-							<h3>Stepford Palace <span class="goals1">3 - 3</span> Vandelay Wolves</h3>
+							<h3>Stepford Palace <span class="goals1">3 - 3</span> <span align='right' style='padding-left : 60px;'>Vandelay Wolves</span></h3>
 						</div>
 					</div>
 					</a>

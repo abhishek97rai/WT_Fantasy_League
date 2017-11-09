@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2017 at 12:36 AM
+-- Generation Time: Nov 09, 2017 at 02:51 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -262,7 +262,9 @@ INSERT INTO `login` (`user_id`, `user_full_name`, `user_name`, `user_password`) 
 (4, 'Sai YR', 'saiarrow', 'gooner'),
 (5, 'Dhruv Trivedi', 'kuchbhi', 'gooner'),
 (6, 'Kundan Patel', 'kundan', 'gooner'),
-(7, 'Donnie Darko', 'don', 'gooner');
+(7, 'Donnie Darko', 'don', 'gooner'),
+(8, 'Aaron ramsey ', 'ramsey', 'gooner'),
+(9, 'Akweel Quadri', 'akad', 'gooner');
 
 -- --------------------------------------------------------
 
@@ -416,7 +418,7 @@ CREATE TABLE `results` (
 --
 
 INSERT INTO `results` (`rid`, `show_res`) VALUES
-(1, 0);
+(1, 1);
 
 -- --------------------------------------------------------
 
@@ -572,7 +574,9 @@ INSERT INTO `team_details` (`team_id`, `user_id`, `team_name`, `team_value`, `te
 (4, 4, 'Sion Bakwaas', 225, 147, '0', 1, 4),
 (5, 5, 'Yellow is Red', 225, 159, '0', 1, 3),
 (6, 6, 'Virar Dynamos', 225, 182, '0', 1, 1),
-(7, 7, 'Pythons', 225, 94, '', 1, 6);
+(7, 7, 'Pythons', 225, 94, '', 1, 8),
+(8, 8, 'rams XI', 183, 96, '', 1, 7),
+(9, 9, 'Chembur Chamars', 225, 133, '', 1, 6);
 
 --
 -- Indexes for dumped tables
@@ -671,7 +675,7 @@ ALTER TABLE `football_mids`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `player_points`
 --
@@ -691,7 +695,7 @@ ALTER TABLE `selected`
 -- AUTO_INCREMENT for table `team_details`
 --
 ALTER TABLE `team_details`
-  MODIFY `team_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;COMMIT;
+  MODIFY `team_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
